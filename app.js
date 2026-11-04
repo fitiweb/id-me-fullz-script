@@ -7,7 +7,7 @@
 // 1. SUPABASE CONFIGURATION
 
 const SUPABASE_URL = "https://hsjuqkkmxtiyxcixvgbn.supabase.co";
-const SUPABASE_ANON_KEY = "YOUR_SUPABASE_PUBLISHABLE_KEY";
+const SUPABASE_ANON_KEY = "sb_publishable_StBW6va3KI25ENh8vDZLDw_qA0kqWNb";
 
 const db = window.supabase.createClient(
   SUPABASE_URL,
