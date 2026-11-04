@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fitiwebs Educational Records</title>
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div>
+    <h2>FITIWEBS <span>EDU</span></h2>
+    <small>Educational Records Management</small>
+  </div>
+  <button id="logoutBtn" class="logout hidden">Logout</button>
+</header>
+
+<main class="container">
+
+  <!-- AUTHENTICATION -->
+
+  <section id="authSection" class="card">
+    <h1>Welcome Back</h1>
+    <p class="muted">Login or create an account to manage your records.</p>
+
+    <form id="authForm">
+      <label>Email Address</label>
+      <input type="email" id="email" required placeholder="Enter email">
+
+      <label>Password</label>
+      <input type="password" id="password" minlength="8"
+      required placeholder="Minimum 8 characters">
+
+      <button type="submit" id="authButton">Login</button>
+    </form>
+
+    <p class="switch">
+      <span id="authMessage">New user?</span>
+      <button type="button" id="switchAuth">Create Account</button>
+    </p>
+
+    <p id="authStatus" class="status"></p>
+  </section>
+
+  <!-- APPLICATION -->
+
+  <section id="appSection" class="hidden">
+
+    <div class="welcome card">
+      <h1>Educational Dashboard</h1>
+      <p class="muted">Manage your educational demonstration records.</p>
+    </div>
+
+    <div class="card">
+
+      <h2>New Educational Record</h2>
+
+      <p class="notice">
+        Use fictional educational information only.
+        Do not enter government identity numbers, private addresses,
+        or family security information.
+      </p>
+
+      <form id="recordForm">
+
+        <label>01. Course Name</label>
+        <input name="course_name" required maxlength="200"
+        placeholder="Example: Web Development">
+
+        <label>02. Learning Goal</label>
+        <textarea name="learning_goal" required maxlength="1000"
+        placeholder="What do you want to learn?"></textarea>
+
+        <label>03. Experience Level</label>
+        <select name="experience_level" required>
+          <option value="">Choose experience level</option>
+          <option>Beginner</option>
+          <option>Intermediate</option>
+          <option>Advanced</option>
+        </select>
+
+        <label>04. Favorite Topic</label>
+        <input name="favorite_topic" required maxlength="200"
+        placeholder="Enter your favorite topic">
+
+        <label>05. Preferred Learning Format</label>
+        <select name="learning_format" required>
+          <option value="">Select learning format</option>
+          <option>Video lessons</option>
+          <option>Written tutorials</option>
+          <option>Practical projects</option>
+          <option>Live classes</option>
+        </select>
+
+        <label>06. Study Schedule</label>
+        <input name="study_schedule" required maxlength="200"
+        placeholder="Example: Weekdays, evenings">
+
+        <label>07. Project Idea</label>
+        <textarea name="project_idea" required maxlength="1000"
+        placeholder="Describe your learning project"></textarea>
+
+        <label>08. Tools Used</label>
+        <input name="tools_used" required maxlength="300"
+        placeholder="Example: HTML, CSS, JavaScript">
+
+        <label>09. Learning Challenge</label>
+        <textarea name="learning_challenge" required maxlength="1000"
+        placeholder="Describe your learning challenge"></textarea>
+
+        <label>10. Additional Notes</label>
+        <textarea name="additional_notes" required maxlength="1000"
+        placeholder="Enter additional educational notes"></textarea>
+
+        <button type="submit" id="saveBtn">
+          Save Educational Record
+        </button>
+
+      </form>
+
+      <p id="formStatus" class="status"></p>
+    </div>
+
+    <!-- SAVED RECORDS -->
+
+    <div class="card">
+
+      <div class="records-heading">
+        <h2>Saved Records</h2>
+        <button id="refreshBtn" class="secondary">
+          Refresh
+        </button>
+      </div>
+
+      <input type="search" id="searchInput"
+      placeholder="Search educational records...">
+
+      <div id="recordsContainer">
+        <p class="muted">Loading records...</p>
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  <p>Powered by Fitiwebs Technologies</p>
+  <small>Educational demonstration application.</small>
+</footer>
+
+<script src="app.js"></script>
+
+</body>
+</html>
